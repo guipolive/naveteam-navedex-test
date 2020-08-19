@@ -39,6 +39,16 @@ const Home = () => {
         })
     }, [])
 
+    function deleteNaver(id: string) {
+        api.delete(`/navers/${id}`)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error, error.response);
+            });
+    }
+
     return(
         <div id="home-page">
             <Header />
@@ -56,13 +66,13 @@ const Home = () => {
             <div className="navers-list">
                 {/* Percorrendo todos os navers do usuário */}
                 {navers.map(naver => (
-                    <div className="naver">
+                    <div className="naver" key={naver.id}>
                         <img src={naver.url} alt={naver.name}/>
                         <p className="naver-name">{naver.name}</p>
                         <p className="naver-description">{naver.job_role}</p>
 
                         <div className="naver-options">
-                            <img src={trashCan} alt="Excluir"/>
+                            <img onClick={e => deleteNaver(naver.id)} src={trashCan} alt="Excluir"/>
                             <img src={pencil} alt="Editar"/>
                         </div>
                     </div>
