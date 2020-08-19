@@ -1,7 +1,8 @@
 :root {
     font-size: 60%;
 
-    --color-background: #F0F0F7;
+    /* --color-background: #F0F0F7; */
+    --color-background: white;
 }
 
 /* para todos os elementos */
@@ -27,7 +28,7 @@ body {
 }
 
 body, input, button, select, textarea {
-    font: 500 1.6rem Poppins;
+    font: 600 1.6rem Montserrat;
 }
 
 .container {
