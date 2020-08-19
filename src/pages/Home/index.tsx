@@ -3,11 +3,13 @@ import React from 'react';
 // Importando o Link para fazermos a navegação
 import { Link } from 'react-router-dom';
 
+// Importando components
+import Header from '../../components/Header';
+
 // Importando o css
 import './styles.css';
 
 // Importando o ícone
-import naveLogo from '../../assets/images/icons/naveLogo.svg';
 import imgTest from '../../assets/images/IMG_9945.png'
 import trashCan from '../../assets/images/icons/trashCan.svg';
 import pencil from '../../assets/images/icons/pencil.svg';
@@ -15,13 +17,7 @@ import pencil from '../../assets/images/icons/pencil.svg';
 function Home() {
     return(
         <div id="home-page" className="container">
-            <header className="page-header">
-                <img src={naveLogo} alt="Nave"/>
-
-                <Link to="/">
-                    Sair
-                </Link>
-            </header>
+            <Header />
 
             <main>
                 <div className="mini-header">

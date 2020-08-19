@@ -1,0 +1,21 @@
+header.page-header {
+    height: 3.5rem;
+    width: 100vw;
+
+    padding: 5rem 3.2rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header.page-header img {
+    height: 3.5rem;
+    width: 13.6rem;
+}
+
+header.page-header a {
+    text-decoration: none; /* Removendo características de link */
+    color: #000000;
+    font: 600 Montserrat 1.4rem;
+}
