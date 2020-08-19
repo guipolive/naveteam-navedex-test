@@ -1,0 +1,42 @@
+:root {
+    font-size: 60%;
+
+    --color-background: #F0F0F7;
+}
+
+/* para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh; /* faz com que ocupe 100% da tela */
+}
+
+body {
+    background: var(--color-background);
+}
+
+/* alinhando todo o conteúdo ao centro */
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body, input, button, select, textarea {
+    font: 500 1.6rem Poppins;
+}
+
+.container {
+    width: 90vw; /* largura é de 90% da tela */
+    max-width: 700px; /* largura máxima de 700px para telas grandes */
+}
+
+@media(min-width: 700px) {
+    :root {
+        font-size: 62.5% /* aumentando um pouco a letra para telas grandes */;
+    }
+}
