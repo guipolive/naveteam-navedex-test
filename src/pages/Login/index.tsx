@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 // Importando o Link para fazermos a navegação
 import { Link } from 'react-router-dom';

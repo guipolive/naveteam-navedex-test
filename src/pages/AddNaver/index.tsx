@@ -7,7 +7,6 @@ import './styles.css';
 import Header from '../../components/Header';
 
 // Importando o logo da Nave e os ícones
-import naveLogo from '../../assets/images/icons/naveLogo.svg';
 import arrowLeft from '../../assets/images/icons/arrowLeft.svg';
 import { Link } from 'react-router-dom';
 
@@ -17,7 +16,7 @@ function AddNaver() {
             <Header />
 
             <main>
-                <div className="option-naver">
+                <div className="option-naver container">
                     <div className="option-header">
                         <Link to="#">
                             <img src={arrowLeft} alt="Voltar"/>

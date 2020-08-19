@@ -3,26 +3,29 @@
     width: 100vw;
     height: 100vh;
 
-    /* Alinhando o conteúdo ao centro */
+    /* Alinhando o conteúdo no início da página */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
-main {
+#add-naver-page main {
+    width: 100%;
+    height: 100%;
+
     /* Alinhando tudo ao centro */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
-.option-naver {
-    height: 70%;
+#add-naver-page .option-naver {
+    height: 40%;
     width: 50%;
 }
 
-.option-naver div.option-header a {
+#add-naver-page .option-naver div.option-header a {
     width: 34rem;
 
     text-decoration: none;
@@ -31,12 +34,12 @@ main {
     justify-content: flex-start;
 }
 
-.option-naver div.option-header img {
+#add-naver-page .option-naver div.option-header img {
     height: 2rem;
     width: 1.2rem;
 }
 
-.option-naver div.option-header p {
+#add-naver-page .option-naver div.option-header p {
     font: 600 Montserrat;
     font-size: 3.6rem;
     color: #212121;
@@ -44,7 +47,7 @@ main {
     margin-left: 2rem;
 }
 
-.option-naver div.form {
+#add-naver-page .option-naver div.form {
     height: 90%;
     width: 100%;
 
@@ -54,7 +57,7 @@ main {
     justify-content: space-around;
 }
 
-.option-naver div.form .option-line {
+#add-naver-page .option-naver div.form .option-line {
     height: 8rem;
     width: 100%;
 
@@ -63,16 +66,16 @@ main {
     justify-content: space-between;
 } 
 
-.option-naver div.form .option-line .input-block {
+#add-naver-page .option-naver div.form .option-line .input-block {
     position: relative;
 }
 
-.option-naver div.form .option-line .input-block label {
+#add-naver-page .option-naver div.form .option-line .input-block label {
     display: block;
 }
 
 
-.option-naver div.form .option-line .input-block input {
+#add-naver-page .option-naver div.form .option-line .input-block input {
     height: 4rem;
     width: 28rem;
     margin-top: 0.8rem;
@@ -82,12 +85,12 @@ main {
     font: 500 Montserrat;
 }
 
-.option-naver div.form .option-line .input-block input::placeholder {
+#add-naver-page .option-naver div.form .option-line .input-block input::placeholder {
     font-family: Montserrat;
     color: #9E9E9E;
 }
 
-.option-naver button {
+#add-naver-page .option-naver button {
     width: 17rem;
     height: 4rem;
 
@@ -97,7 +100,7 @@ main {
     background: #212121;
 }
 
-.option-naver button a {
+#add-naver-page .option-naver button a {
     font: 600 Montserrat;
     color: #FFFFFF;
 

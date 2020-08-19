@@ -3,6 +3,8 @@
     width: 100vw;
     height: 100vh;
 
+    padding: 3rem;
+
     /* Alinhando o conteúdo ao centro */
     display: flex;
     align-items: center;
