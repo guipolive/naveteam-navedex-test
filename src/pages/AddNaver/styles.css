@@ -1,0 +1,105 @@
+#add-naver-page {
+    /* Altura e largura completando a tela inteira */
+    width: 100vw;
+    height: 100vh;
+
+    /* Alinhando o conteúdo ao centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    /* Alinhando tudo ao centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-naver {
+    height: 70%;
+    width: 50%;
+}
+
+.option-naver div.option-header a {
+    width: 34rem;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.option-naver div.option-header img {
+    height: 2rem;
+    width: 1.2rem;
+}
+
+.option-naver div.option-header p {
+    font: 600 Montserrat;
+    font-size: 3.6rem;
+    color: #212121;
+
+    margin-left: 2rem;
+}
+
+.option-naver div.form {
+    height: 90%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.option-naver div.form .option-line {
+    height: 8rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.option-naver div.form .option-line .input-block {
+    position: relative;
+}
+
+.option-naver div.form .option-line .input-block label {
+    display: block;
+}
+
+
+.option-naver div.form .option-line .input-block input {
+    height: 4rem;
+    width: 28rem;
+    margin-top: 0.8rem;
+    border: 1px solid #424242; /* Borda */
+    outline: 0; /* Em volta do item */
+    padding: 0 1.6rem;
+    font: 500 Montserrat;
+}
+
+.option-naver div.form .option-line .input-block input::placeholder {
+    font-family: Montserrat;
+    color: #9E9E9E;
+}
+
+.option-naver button {
+    width: 17rem;
+    height: 4rem;
+
+    float: right;
+    margin-top: 3.3rem;
+    border: 0;
+    background: #212121;
+}
+
+.option-naver button a {
+    font: 600 Montserrat;
+    color: #FFFFFF;
+
+    text-decoration: none; /* Removendo o sublinhado */
+}

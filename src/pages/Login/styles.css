@@ -39,7 +39,7 @@
 }
 
 /* Pegando todos os input-blocks que não são o primeiro */
-.input-block + .input-block {
+#login-page .input-block + .input-block {
     margin-top:3.3rem;
 }
 

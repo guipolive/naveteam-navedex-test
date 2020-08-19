@@ -24,7 +24,7 @@ function Home() {
                         <p>Navers</p>
 
                         <button>
-                            <Link to="/login">
+                            <Link to="/add-naver">
                                 Adicionar Naver
                             </Link>
                         </button>
