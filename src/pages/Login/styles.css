@@ -62,12 +62,16 @@
     width: 80%;
     height: 3.87rem;
 
-    font: 600 Montserrat;
-    color: #FFFFFF;
-
     margin-top: 3.3rem;
 
     border: 0;
 
     background: #212121;
+}
+
+.square-content main button a {
+    font: 600 Montserrat;
+    color: #FFFFFF;
+
+    text-decoration: none; /* Removendo o sublinhado */
 }

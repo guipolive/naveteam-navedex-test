@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Importando o Link para fazermos a navegação
+import { Link } from 'react-router-dom';
+
 // Importando o css
 import './styles.css';
 
@@ -28,7 +31,9 @@ function Login() {
                     </div>
 
                     <button>
-                        Entrar
+                        <Link to="/home">
+                            Entrar
+                        </Link>
                     </button>
                 </main>
             </div>
