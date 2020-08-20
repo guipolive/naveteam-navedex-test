@@ -29,13 +29,13 @@ interface Naver {
 
 const Home = () => {
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [navers, setNavers] = useState<Naver[]>([]); // declarando o estado navers
 
     // é uma função que pode ser executada várias vezes se necessário
     useEffect(() => {
         api.get('/navers').then(response => {
             setNavers(response.data); // setando os navers
-            // console.log(response.data);
         })
     }, [])
 
@@ -75,10 +75,6 @@ const Home = () => {
                             <img onClick={e => deleteNaver(naver.id)} src={trashCan} alt="Excluir"/>
                             <Link to={{
                                 pathname: `/att-naver/${naver.id}`,
-                                // state: {
-                                //     "name": 'teste',
-                                //     "organization": 'blob'
-                                // }
                             }}>
                                 <img src={pencil} alt="Editar"/>
                             </Link>

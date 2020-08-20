@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 // Importando o css
 import './styles.css';
 
-// Importando o Header
+// Importando os components
 import Header from '../../components/Header';
+import Modal from '../../components/ModalCreateNaver';
 
 // Importando o logo da Nave e os ícones
 import arrowLeft from '../../assets/images/icons/arrowLeft.svg';
@@ -15,6 +16,8 @@ import api from '../../services/api';
 
 const AddNaver = () => {
     // tratar timestamp
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [name, setName] = useState('');
     const [job_role, setJobRole] = useState('');
     const [birthdate, setBirthDate] = useState('');
@@ -94,11 +97,13 @@ const AddNaver = () => {
                         </div>
                     </div>
 
-                    <button onClick={createNaver}>
+                    <button onClick={() => setIsModalOpen(true)} /* onClick={createNaver} */>
                         <Link to="#">
                             Salvar
                         </Link>
                     </button>
+
+                    {isModalOpen ? <Modal onClose={() => setIsModalOpen(false)} title="Naver criado" body="Naver criado com sucesso!" /> : null}
                 </div>
             </main>
         </div>
