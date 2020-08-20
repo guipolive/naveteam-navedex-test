@@ -15,7 +15,7 @@ interface ModalProps {
 
 
 
-const ModalCreateNaver: React.FC<ModalProps>= (props)=> {
+const Modal: React.FC<ModalProps>= (props)=> {
 
     const handleOutsideClick = (e: any) => {
         if(e.target.id == 'modal')
@@ -38,4 +38,4 @@ const ModalCreateNaver: React.FC<ModalProps>= (props)=> {
     )
 }
 
-export default ModalCreateNaver;
+export default Modal;

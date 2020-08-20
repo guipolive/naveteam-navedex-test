@@ -5,7 +5,7 @@ import './styles.css';
 
 // Importando os components
 import Header from '../../components/Header';
-import Modal from '../../components/ModalCreateNaver';
+import Modal from '../../components/Modal';
 
 // Importando o logo da Nave e os ícones
 import arrowLeft from '../../assets/images/icons/arrowLeft.svg';
