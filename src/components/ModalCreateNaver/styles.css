@@ -1,0 +1,59 @@
+#modal {
+    /* Deve ocupar a tela inteira para escurecer tudo */
+    width: 100%;
+    height: 100vh;
+
+    /* Colocando por cima de tudo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    /* Escurecendo */
+    background-color: rgba(0, 0 ,0 ,0.8);
+
+    /* Alinhando a modal ao centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal .container {
+    background: #ffffff;
+
+    padding: 3.2rem;
+
+    width: 40vw;
+    height: 20vh;
+}
+
+#modal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#modal .modal-header p {
+    font: 600 Montserrat;
+    font-size: 2.4rem;
+}
+
+#modal .modal-header img {
+    transition: 0.4s;
+
+    cursor: pointer;
+}
+
+#modal .modal-header img:hover {
+    transform: rotate(90deg);
+}
+
+#modal .modal-content {
+    font: 500 Montserrat;
+    font-size: 1.6rem;
+}
+
+#modal .modal-content p {
+    margin-top: 3.4rem;
+    color: #212121;
+}
