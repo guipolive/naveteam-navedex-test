@@ -37,6 +37,7 @@ const AddNaver = () => {
           })
           .then(function (response) {
             console.log(response);
+            setIsModalOpen(true);
           })
           .catch(function (error) {
             console.log(error, error.response);
@@ -44,6 +45,15 @@ const AddNaver = () => {
 
           console.log('Chegou em criar naver');
           console.log(name, job_role, birthdate, admission_date, project, url);
+    }
+
+    function clearFields() {
+        setName('');
+        setJobRole('');
+        setBirthDate('');
+        setAdmissionDate('');
+        setProject('');
+        setUrl('');
     }
 
     return(
@@ -63,47 +73,55 @@ const AddNaver = () => {
                         <div className="option-line">
                             <div className="input-block">
                                 <label htmlFor="nome">Nome</label>
-                                <input onChange={e => setName(e.target.value)} placeholder="Nome" type="text" id="nome"/>
+                                <input value={name} onChange={e => setName(e.target.value)} placeholder="Nome" type="text" id="nome"/>
                             </div>
                             
                             <div className="input-block">
                                 <label htmlFor="cargo">Cargo</label>
-                                <input onChange={e => setJobRole(e.target.value)} placeholder="Cargo" type="text" id="cargo"/>
+                                <input value={job_role} onChange={e => setJobRole(e.target.value)} placeholder="Cargo" type="text" id="cargo"/>
                             </div>
                         </div>
 
                         <div className="option-line">
                             <div className="input-block">
                                 <label htmlFor="idade">Idade</label>
-                                <input onChange={e => setBirthDate(e.target.value)} placeholder="Idade" type="text" id="idade"/>
+                                <input value={birthdate} onChange={e => setBirthDate(e.target.value)} placeholder="Idade" type="text" id="idade"/>
                             </div>
                             
                             <div className="input-block">
                                 <label htmlFor="tempo-de-empresa">Tempo de empresa</label>
-                                <input onChange={e => setAdmissionDate(e.target.value)} placeholder="Tempo de empresa" type="text" id="tempo-de-empresa"/>
+                                <input value={admission_date} onChange={e => setAdmissionDate(e.target.value)} placeholder="Tempo de empresa" type="text" id="tempo-de-empresa"/>
                             </div>
                         </div>
 
                         <div className="option-line">
                             <div className="input-block">
                                 <label htmlFor="projetos-que-participou">Projetos que participou</label>
-                                <input onChange={e => setProject(e.target.value)} placeholder="Projetos que participou" type="text" id="projetos-que-participou"/>
+                                <input value={project} onChange={e => setProject(e.target.value)} placeholder="Projetos que participou" type="text" id="projetos-que-participou"/>
                             </div>
                             
                             <div className="input-block">
                                 <label htmlFor="url-foto-naver">Url da foto do Naver</label>
-                                <input onChange={e => setUrl(e.target.value)} placeholder="Url da foto do Naver" type="text" id="url-foto-naver"/>
+                                <input value={url} onChange={e => setUrl(e.target.value)} placeholder="Url da foto do Naver" type="text" id="url-foto-naver"/>
                             </div>
                         </div>
                     </div>
 
-                    <button onClick={() => setIsModalOpen(true)} /* onClick={createNaver} */>
+                    <button /* onClick={() => setIsModalOpen(true)} */ onClick={createNaver}>
                         <Link to="#">
                             Salvar
                         </Link>
                     </button>
 
-                    {isModalOpen ? <Modal onClose={() => setIsModalOpen(false)} title="Naver criado" body="Naver criado com sucesso!" /> : null}
+                    {isModalOpen ? 
+                        <Modal 
+                            onClose={() => {
+                                setIsModalOpen(false);
+                                clearFields();
+                        }} title="Naver criado" body="Naver criado com sucesso!" /> 
+                        : 
+                        null
+                    }
                 </div>
             </main>
         </div>
