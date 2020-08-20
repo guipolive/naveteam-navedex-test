@@ -69,11 +69,14 @@
     border: 0;
 
     background: #212121;
-}
 
-.square-content main button a {
     font: 600 Montserrat;
     color: #FFFFFF;
 
-    text-decoration: none; /* Removendo o sublinhado */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.square-content main button:hover {
+    opacity: 70%;
 }

@@ -73,7 +73,15 @@ const Home = () => {
 
                         <div className="naver-options">
                             <img onClick={e => deleteNaver(naver.id)} src={trashCan} alt="Excluir"/>
-                            <img src={pencil} alt="Editar"/>
+                            <Link to={{
+                                pathname: `/att-naver/${naver.id}`,
+                                // state: {
+                                //     "name": 'teste',
+                                //     "organization": 'blob'
+                                // }
+                            }}>
+                                <img src={pencil} alt="Editar"/>
+                            </Link>
                         </div>
                     </div>
                 ))}

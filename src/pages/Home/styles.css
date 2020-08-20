@@ -112,3 +112,11 @@
     align-items: center;
     justify-content: space-between;
 }
+
+#home-page .naver .naver-options a {
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    color: none;
+}
