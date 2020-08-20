@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 // Importando components
 import Header from '../../components/Header';
+import Modal from '../../components/Modal';
 
 // Importando o css
 import './styles.css';
@@ -43,10 +44,17 @@ const Home = () => {
         api.delete(`/navers/${id}`)
             .then(function (response) {
                 console.log(response);
+                handleDeleteNaver();
+                // procurar e remover o 'i' de navers que possuir o id do removido,
+                // pois ele atualmente está sendo removido do banco mas não do array
             })
             .catch(function (error) {
                 console.log(error, error.response);
             });
+    }
+
+    function handleDeleteNaver() {
+        setIsModalOpen(true);
     }
 
     return(
@@ -79,6 +87,15 @@ const Home = () => {
                                 <img src={pencil} alt="Editar"/>
                             </Link>
                         </div>
+
+                        {isModalOpen ? 
+                            <Modal 
+                                onClose={() => {
+                                    setIsModalOpen(false);
+                            }} title="Naver atualizado" body="Naver atualizado com sucesso!" /> 
+                            : 
+                            null
+                        }
                     </div>
                 ))}
             </div>
