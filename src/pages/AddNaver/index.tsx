@@ -37,7 +37,7 @@ const AddNaver = () => {
           })
           .then(function (response) {
             console.log(response);
-            setIsModalOpen(true);
+            handleInsert();
           })
           .catch(function (error) {
             console.log(error, error.response);
@@ -47,7 +47,9 @@ const AddNaver = () => {
           console.log(name, job_role, birthdate, admission_date, project, url);
     }
 
-    function clearFields() {
+    function handleInsert() {
+        setIsModalOpen(true);
+
         setName('');
         setJobRole('');
         setBirthDate('');
@@ -117,7 +119,7 @@ const AddNaver = () => {
                         <Modal 
                             onClose={() => {
                                 setIsModalOpen(false);
-                                clearFields();
+                                // handleInsert();
                         }} title="Naver criado" body="Naver criado com sucesso!" /> 
                         : 
                         null

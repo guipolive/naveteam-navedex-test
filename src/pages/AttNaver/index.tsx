@@ -12,6 +12,7 @@ import { Link, RouteComponentProps} from 'react-router-dom';
 
 // Importando a api
 import api from '../../services/api';
+import Modal from '../../components/Modal';
 
 interface MatchParams {
     id: string;
@@ -23,6 +24,7 @@ interface AttNaverProps extends RouteComponentProps<MatchParams> {
 
 const AttNaver: React.FC<AttNaverProps>= (props) => {
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [name, setName] = useState('');
     const [job_role, setJobRole] = useState('');
     const [birthdate, setBirthDate] = useState('');
@@ -48,7 +50,7 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
     }, []);
 
     // Esta função vai ser executada quando o botão "ATT NAVER" for clicado
-    function createNaver() {
+    function updateNaver() {
         api.put(`/navers/${props.match.params.id}`, {
             job_role: job_role,
             admission_date: admission_date,
@@ -59,11 +61,23 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
           })
           .then(function (response) {
             console.log(response);
+            handleUpdate();
           })
           .catch(function (error) {
             console.log(error, error.response);
         });
         console.log("funcionou");
+    }
+
+    function handleUpdate() {
+        setIsModalOpen(true);
+
+        // setName('');
+        // setJobRole('');
+        // setBirthDate('');
+        // setAdmissionDate('');
+        // setProject('');
+        // setUrl('');
     }
 
     return(
@@ -117,11 +131,21 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
                         </div>
                     </div>
 
-                    <button onClick={createNaver}>
+                    <button onClick={updateNaver}>
                         <Link to="#">
                             Salvar
                         </Link>
                     </button>
+
+                    {isModalOpen ? 
+                        <Modal 
+                            onClose={() => {
+                                setIsModalOpen(false);
+                                // handleInsert();
+                        }} title="Naver atualizado" body="Naver atualizado com sucesso!" /> 
+                        : 
+                        null
+                    }
                 </div>
             </main>
         </div>
