@@ -30,7 +30,13 @@ interface Naver {
 
 const Home = () => {
 
+    const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+    const [isNaverModalOpen, setIsNaverModalOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [excludingNaver, setExcludingNaver] = useState('');
+
+    const [updatingNaver, setUpdatingNaver] = useState('');
+
     const [navers, setNavers] = useState<Naver[]>([]); // declarando o estado navers
 
     // é uma função que pode ser executada várias vezes se necessário
@@ -44,17 +50,19 @@ const Home = () => {
         api.delete(`/navers/${id}`)
             .then(function (response) {
                 console.log(response);
-                handleDeleteNaver();
+                setIsConfirmModalOpen(false);
+                setIsModalOpen(true);
                 // procurar e remover o 'i' de navers que possuir o id do removido,
                 // pois ele atualmente está sendo removido do banco mas não do array
             })
             .catch(function (error) {
                 console.log(error, error.response);
-            });
+        });
     }
 
-    function handleDeleteNaver() {
-        setIsModalOpen(true);
+    function handleDeleteNaver(id: string) {
+        setIsConfirmModalOpen(true);
+        setExcludingNaver(id);
     }
 
     return(
@@ -80,7 +88,7 @@ const Home = () => {
                         <p className="naver-description">{naver.job_role}</p>
 
                         <div className="naver-options">
-                            <img onClick={e => deleteNaver(naver.id)} src={trashCan} alt="Excluir"/>
+                            <img onClick={e => handleDeleteNaver(naver.id)} src={trashCan} alt="Excluir"/>
                             <Link to={{
                                 pathname: `/att-naver/${naver.id}`,
                             }}>
@@ -88,16 +96,60 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        {isModalOpen ? 
-                            <Modal 
-                                onClose={() => {
-                                    setIsModalOpen(false);
-                            }} title="Naver atualizado" body="Naver atualizado com sucesso!" /> 
-                            : 
-                            null
-                        }
+                        
                     </div>
                 ))}
+                {isConfirmModalOpen ? (
+                    <Modal 
+                        onClose={() => {
+                            setIsConfirmModalOpen(false);
+                            setExcludingNaver(''); /* Zerando excluding Naver */
+                        }} title="Excluir Naver" body="Tem certeza que deseja excluir este Naver?"
+                    >
+                        <div className="confirm-exclusion-buttons">    
+                            <button 
+                                onClick={
+                                    () => {
+                                        setIsConfirmModalOpen(false);
+                                        setExcludingNaver(''); /* Zerando excluding Naver */
+                                    }
+                                } className="button-cancel" >
+                                Cancelar
+                            </button>
+                            <button onClick={() => deleteNaver(excludingNaver)} className="button-confirm" >
+                                Excluir
+                            </button>
+                        </div>
+
+                    </Modal>)
+                : null}
+
+                {isModalOpen ? (
+                    <Modal
+                        onClose={() => {
+                            setIsModalOpen(false);
+                            setExcludingNaver(''); /* Zerando excluding Naver */
+                        }} title="Naver excluído" body="Naver excluído com sucesso"    
+                    >
+
+                    </Modal>
+                ) : null}
+
+                {isNaverModalOpen ? (
+                    <Modal
+                        onClose={() => {
+                            setIsNaverModalOpen(false);
+                        }} title="Naver excluído" body="Naver excluído com sucesso"
+                    >
+                        <img src="https://lh3.googleusercontent.com/bzAdvLKChPfhw3VY_i32-XAUxgssb5J_647JBlizdAdeyEeXbc6sOW5RALvbPEd4VZLK9ds=s136" alt="Bill Gates"/>
+
+                        
+
+                    </Modal>
+                ) : null}
+                <button onClick={() => setIsNaverModalOpen(true)}>
+                    Abre Modal
+                </button>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 
 // Importando os estilos
 import './styles.css';
@@ -32,6 +32,7 @@ const Modal: React.FC<ModalProps>= (props)=> {
                 
                 <div className="modal-content">
                     <p>{props.body}</p>
+                    {props.children}
                 </div>
             </div>
         </div>
