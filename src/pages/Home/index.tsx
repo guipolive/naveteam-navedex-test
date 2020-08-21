@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // Importando components
 import Header from '../../components/Header';
 import Modal from '../../components/Modal';
+import ModalShowNaver from '../../components/ModalShowNaver';
 
 // Importando o css
 import './styles.css';
@@ -35,7 +36,15 @@ const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [excludingNaver, setExcludingNaver] = useState('');
 
-    const [updatingNaver, setUpdatingNaver] = useState('');
+    const [updatingNaver, setUpdatingNaver] = useState<Naver>({id: '',
+            name: '',
+            admission_date: '',
+            job_role: '',
+            user_id: '',
+            project: '',
+            birthdate: '',
+            url: ''
+    });
 
     const [navers, setNavers] = useState<Naver[]>([]); // declarando o estado navers
 
@@ -65,6 +74,11 @@ const Home = () => {
         setExcludingNaver(id);
     }
 
+    function handleShowNaver(o: Naver) {
+        setUpdatingNaver(o);
+        setIsNaverModalOpen(true);
+    }
+
     return(
         <div id="home-page">
             <Header />
@@ -83,7 +97,7 @@ const Home = () => {
                 {/* Percorrendo todos os navers do usuário */}
                 {navers.map(naver => (
                     <div className="naver" key={naver.id}>
-                        <img src={naver.url} alt={naver.name}/>
+                        <img onClick={() => handleShowNaver(naver)} src={naver.url} alt={naver.name}/>
                         <p className="naver-name">{naver.name}</p>
                         <p className="naver-description">{naver.job_role}</p>
 
@@ -136,16 +150,20 @@ const Home = () => {
                 ) : null}
 
                 {isNaverModalOpen ? (
-                    <Modal
+                    <ModalShowNaver
                         onClose={() => {
                             setIsNaverModalOpen(false);
-                        }} title="Naver excluído" body="Naver excluído com sucesso"
+                        }} 
+                        title={updatingNaver.name}
+                        birthdate={updatingNaver.birthdate} 
+                        admission_date={updatingNaver.admission_date}
+                        project={updatingNaver.project}
+                        job_role={updatingNaver.job_role}
+                        url={updatingNaver.url}
                     >
-                        <img src="https://lh3.googleusercontent.com/bzAdvLKChPfhw3VY_i32-XAUxgssb5J_647JBlizdAdeyEeXbc6sOW5RALvbPEd4VZLK9ds=s136" alt="Bill Gates"/>
+                       
 
-                        
-
-                    </Modal>
+                    </ModalShowNaver>
                 ) : null}
                 <button onClick={() => setIsNaverModalOpen(true)}>
                     Abre Modal

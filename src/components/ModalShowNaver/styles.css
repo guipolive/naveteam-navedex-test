@@ -1,0 +1,88 @@
+#modal-show-naver {
+    /* Deve ocupar a tela inteira para escurecer tudo */
+    width: 100%;
+    height: 100vh;
+
+    /* Colocando por cima de tudo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    /* Escurecendo */
+    background-color: rgba(0, 0 ,0 ,0.8);
+
+    /* Alinhando a modal ao centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-show-naver .container {
+    background: #ffffff;
+
+
+    width: 70vw;
+    height: 70vh;
+
+    max-width: 120rem;
+    max-height: 62rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#modal-show-naver .container img.naver-image {
+    height: 100%;
+    width: 70vh;
+    max-height: 62rem;
+    max-width: 62rem;
+
+}
+
+#modal-show-naver .content {
+
+    padding: 3.2rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#modal-show-naver .modal-header {
+    margin-left: 28rem;
+}
+
+#modal-show-naver .modal-header img {
+    transition: 0.4s;
+
+    cursor: pointer;
+}
+
+#modal-show-naver .modal-header img:hover {
+    transform: rotate(90deg);
+}
+
+#modal-show-naver .modal-body {
+    font: 500 Montserrat;
+    font-size: 1.6rem;
+}
+
+#modal-show-naver .modal-body .top-information p:first-child {
+    font-size: 2.4rem;
+}
+
+#modal-show-naver .modal-body .top-information p + p {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+#modal-show-naver .modal-body .body-information {
+    margin-top: 2.5rem;
+}
+
+#modal-show-naver .modal-body .body-information p + p {
+    margin-top: 1rem;
+    font-weight: 500;
+}
