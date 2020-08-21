@@ -67,16 +67,25 @@
 
 /* Box de um naver */
 #home-page .naver {
-    /* height: 42rem; */
-    /* width: 28rem; */
-
     height: 100%;
     width: 28rem;
+
+    margin-top: 3rem;
 }
 
 #home-page .naver > img {
     width: 28rem;
     height: 28rem;
+    cursor: pointer;
+
+    /* border-radius: 10px; */
+    background-size: contain;
+
+    transition: 0.2s;
+}
+
+#home-page .naver > img:hover {
+    box-shadow: -10px -10px #505050;
 }
 
 #home-page .naver p.naver-name {

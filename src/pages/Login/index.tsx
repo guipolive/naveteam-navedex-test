@@ -66,7 +66,7 @@ function Login() {
             {isErrorModalOpen ? (
                 <Modal 
                     title="Erro"
-                    body="Usuário não cadastrado no sistema ainda." 
+                    body="Usuário não cadastrado no sistema." 
                     onClose={() => {
                         setIsErrorModalOpen(false);
                     }}

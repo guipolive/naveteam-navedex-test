@@ -35,10 +35,10 @@
 
 #modal-show-naver .container img.naver-image {
     height: 100%;
-    width: 70vh;
+    width: 50%;
+
     max-height: 62rem;
     max-width: 62rem;
-
 }
 
 #modal-show-naver .content {
@@ -46,6 +46,8 @@
 
     width: 50%;
     height: 100%;
+
+    border: solid yellow 2px;
 
     display: flex;
     align-items: flex-start;
@@ -66,21 +68,25 @@
     transform: rotate(90deg);
 }
 
-#modal-show-naver .informations {
-    width: 100%;
-}
 
 #modal-show-naver .modal-body {
     font: 500 Montserrat;
     font-size: 1.6rem;
     
-    width: 100%;
+    /* width: 100%; */
+    width: 1000px;
     height: 100%;
 
+    border: 1px solid blue;
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+}
+#modal-show-naver .modal-body .information {
+    border: 1px solid red;
+    width: 100%;
 }
 
 #modal-show-naver .modal-body .top-information p:first-child {

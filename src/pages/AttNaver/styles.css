@@ -51,6 +51,8 @@
     height: 90%;
     width: 100%;
 
+    margin-top: 4rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +84,8 @@
     border: 1px solid #424242; /* Borda */
     outline: 0; /* Em volta do item */
     padding: 0 1.6rem;
-    font: 500 Montserrat;
+    font: Montserrat;
+    font-weight: 500;
 }
 
 #att-naver-page .option-naver div.form .option-line .input-block input::placeholder {

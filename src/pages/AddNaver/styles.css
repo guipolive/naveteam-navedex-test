@@ -20,12 +20,15 @@
     justify-content: center;
 }
 
-#add-naver-page .option-naver {
-    height: 40%;
-    width: 50%;
+#add-naver-page .option-naver-container {
+    width: 50vw;
+    height: 70vh;
+
+    max-height: 40rem;
+    max-width: 60rem;
 }
 
-#add-naver-page .option-naver div.option-header a {
+#add-naver-page .option-naver-container div.option-header a {
     width: 34rem;
 
     text-decoration: none;
@@ -34,12 +37,12 @@
     justify-content: flex-start;
 }
 
-#add-naver-page .option-naver div.option-header img {
+#add-naver-page .option-naver-container div.option-header img {
     height: 2rem;
     width: 1.2rem;
 }
 
-#add-naver-page .option-naver div.option-header p {
+#add-naver-page .option-naver-container div.option-header p {
     font: 600 Montserrat;
     font-size: 3.6rem;
     color: #212121;
@@ -47,60 +50,67 @@
     margin-left: 2rem;
 }
 
-#add-naver-page .option-naver div.form {
+#add-naver-page .option-naver-container div.form {
     height: 90%;
     width: 100%;
+
+    margin-top: 4rem;
+
+    
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
-#add-naver-page .option-naver div.form .option-line {
+#add-naver-page .option-naver-container div.form .option-line {
     height: 8rem;
     width: 100%;
+
+    margin: 1.5rem 0;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 } 
 
-#add-naver-page .option-naver div.form .option-line .input-block {
+#add-naver-page .option-naver-container div.form .option-line .input-block {
     position: relative;
 }
 
-#add-naver-page .option-naver div.form .option-line .input-block label {
+#add-naver-page .option-naver-container div.form .option-line .input-block label {
     display: block;
 }
 
 
-#add-naver-page .option-naver div.form .option-line .input-block input {
+#add-naver-page .option-naver-container div.form .option-line .input-block input {
     height: 4rem;
     width: 28rem;
     margin-top: 0.8rem;
     border: 1px solid #424242; /* Borda */
     outline: 0; /* Em volta do item */
     padding: 0 1.6rem;
-    font: 500 Montserrat;
+    font: Montserrat;
+    font-weight: 500;
 }
 
-#add-naver-page .option-naver div.form .option-line .input-block input::placeholder {
+#add-naver-page .option-naver-container div.form .option-line .input-block input::placeholder {
     font-family: Montserrat;
     color: #9E9E9E;
 }
 
-#add-naver-page .option-naver button {
+#add-naver-page .option-naver-container button {
     width: 17rem;
     height: 4rem;
 
     float: right;
-    margin-top: 3.3rem;
+    /* margin: 3.3rem 0; */
     border: 0;
     background: #212121;
 }
 
-#add-naver-page .option-naver button a {
+#add-naver-page .option-naver-container button a {
     font: 600 Montserrat;
     color: #FFFFFF;
 

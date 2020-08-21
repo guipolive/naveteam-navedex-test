@@ -64,7 +64,7 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
             <Header />
 
             <main>
-                <div className="option-naver container">
+                <div className="option-naver-container">
                     <div className="option-header">
                         <Link to="/home">
                             <img src={arrowLeft} alt="Voltar"/>

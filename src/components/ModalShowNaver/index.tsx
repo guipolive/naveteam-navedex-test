@@ -36,7 +36,7 @@ const ModalShowNaver: React.FC<ModalProps>= (props)=> {
 
                 <div className="content">
                     <div className="modal-body">
-                        <div className="informations" >
+                        <div className="information" >
                             <div className="top-information">
                                 <p>{props.title}</p>
                                 <p>{props.job_role}</p>

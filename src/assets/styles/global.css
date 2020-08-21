@@ -31,10 +31,10 @@ body, input, button, select, textarea {
     font: 600 1.6rem Montserrat;
 }
 
-.container {
-    width: 90vw; /* largura é de 90% da tela */
-    max-width: 700px; /* largura máxima de 700px para telas grandes */
-}
+/* .container {
+    width: 90vw; 
+    max-width: 700px; 
+} */
 
 @media(min-width: 700px) {
     :root {
