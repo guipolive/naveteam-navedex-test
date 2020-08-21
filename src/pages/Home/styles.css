@@ -124,6 +124,12 @@
 
 #home-page .naver .naver-options img {
     cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#home-page .naver .naver-options img:hover {
+    opacity: 70%;
 }
 
 #home-page .naver .naver-options a {
