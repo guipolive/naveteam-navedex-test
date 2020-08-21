@@ -1,14 +1,14 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 // Importando os estilos
 import './styles.css';
 
 // Importando o ícone
 import closeModal from '../../assets/images/icons/closeModal.svg';
-import { Link } from 'react-router-dom';
 
 // Criando a interface
 interface ModalProps {
+    
     // Props obrigatórias
     title: string;
     birthdate: string; 

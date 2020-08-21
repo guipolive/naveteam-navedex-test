@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 
-// Importando o moment para tratar as datas
-import moment from 'moment';
-
 // Importando o css
 import './styles.css';
 
@@ -18,11 +15,6 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import api from '../../services/api';
 
 const AddNaver: React.FC<RouteComponentProps> = (props) => {
-
-    // console.log(moment('2020-08-05T00:00:00.000Z', ''));
-    const test = moment('23/08/2013', 'dd/mm/yyyy').utc();
-    console.log(test);
-    // tratar timestamp
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [name, setName] = useState('');
@@ -95,13 +87,13 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
 
                         <div className="option-line">
                             <div className="input-block">
-                                <label htmlFor="idade">Idade</label>
-                                <input value={birthdate} onChange={e => setBirthDate(e.target.value)} placeholder="Idade" type="text" id="idade"/>
+                                <label htmlFor="idade">Data de nascimento</label>
+                                <input maxLength={11} value={birthdate} onChange={e => setBirthDate(e.target.value)} placeholder="DD/MM/AAAA" type="text" id="idade"/>
                             </div>
                             
                             <div className="input-block">
-                                <label htmlFor="tempo-de-empresa">Tempo de empresa</label>
-                                <input value={admission_date} onChange={e => setAdmissionDate(e.target.value)} placeholder="Tempo de empresa" type="text" id="tempo-de-empresa"/>
+                                <label htmlFor="tempo-de-empresa">Data de admissão</label>
+                                <input maxLength={11} value={admission_date} onChange={e => setAdmissionDate(e.target.value)} placeholder="DD/MM/AAAA" type="text" id="tempo-de-empresa"/>
                             </div>
                         </div>
 

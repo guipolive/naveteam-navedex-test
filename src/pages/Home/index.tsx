@@ -64,8 +64,6 @@ const Home = () => {
                 setIsConfirmModalOpen(false);
                 setIsNaverModalOpen(false);
                 setIsModalOpen(true);
-                // procurar e remover o 'i' de navers que possuir o id do removido,
-                // pois ele atualmente está sendo removido do banco mas não do array
             })
             .catch(function (error) {
                 console.log(error, error.response);
@@ -80,10 +78,6 @@ const Home = () => {
     function handleShowNaver(o: Naver) {
         setUpdatingNaver(o);
         setIsNaverModalOpen(true);
-
-        // const data = moment(o.birthdate).locale('pt-br');
-
-        // console.log(data.fromNow(true));
     }
 
     return(
