@@ -42,8 +42,10 @@
 }
 
 #modal-show-naver .content {
-
     padding: 3.2rem;
+
+    width: 50%;
+    height: 100%;
 
     display: flex;
     align-items: flex-start;
@@ -64,9 +66,21 @@
     transform: rotate(90deg);
 }
 
+#modal-show-naver .informations {
+    width: 100%;
+}
+
 #modal-show-naver .modal-body {
     font: 500 Montserrat;
     font-size: 1.6rem;
+    
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 #modal-show-naver .modal-body .top-information p:first-child {

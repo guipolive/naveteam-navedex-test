@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// Importando o moment para tratar as datas
+import moment from 'moment';
+
 // Importando o css
 import './styles.css';
 
@@ -9,12 +12,16 @@ import Modal from '../../components/Modal';
 
 // Importando o logo da Nave e os ícones
 import arrowLeft from '../../assets/images/icons/arrowLeft.svg';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 
 // Importando a api
 import api from '../../services/api';
 
-const AddNaver = () => {
+const AddNaver: React.FC<RouteComponentProps> = (props) => {
+
+    // console.log(moment('2020-08-05T00:00:00.000Z', ''));
+    const test = moment('23/08/2013', 'dd/mm/yyyy').utc();
+    console.log(test);
     // tratar timestamp
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +63,8 @@ const AddNaver = () => {
         setAdmissionDate('');
         setProject('');
         setUrl('');
+        
+        
     }
 
     return(
@@ -109,7 +118,7 @@ const AddNaver = () => {
                         </div>
                     </div>
 
-                    <button /* onClick={() => setIsModalOpen(true)} */ onClick={createNaver}>
+                    <button onClick={createNaver}>
                         <Link to="#">
                             Salvar
                         </Link>
@@ -119,6 +128,7 @@ const AddNaver = () => {
                         <Modal 
                             onClose={() => {
                                 setIsModalOpen(false);
+                                props.history.push('/home');
                                 // handleInsert();
                         }} title="Naver criado" body="Naver criado com sucesso!" /> 
                         : 

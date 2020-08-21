@@ -1,5 +1,8 @@
 import React, { useState, useEffect  } from 'react';
 
+import moment from 'moment';
+import 'moment/locale/pt-br';
+
 // Importando o css
 import './styles.css';
 
@@ -28,9 +31,17 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
     const [name, setName] = useState('');
     const [job_role, setJobRole] = useState('');
     const [birthdate, setBirthDate] = useState('');
+    const [newBirthDate, setNewBirthDay] = useState('');
+    const [newAdmissionDate, setNewAdmissionDate] = useState('');
     const [admission_date, setAdmissionDate] = useState('');
     const [project, setProject] = useState('');
     const [url, setUrl] = useState('');
+
+    // console.log(moment('2020-08-05T00:00:00.000Z', ''));
+    // const test = moment('23/08/2013', 'dd/mm/yyyy').utc();
+    // const test = moment.parseZone('26/11/2015', 'dd/mm/yyyy').local().format();
+    // console.log(test);
+    console.log(moment.parseZone('27/11/2015', 'DD/MM/YYYY').local().format()); 
 
     useEffect(() => {
         // Create an scoped async function in the hook
@@ -39,10 +50,11 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
             setName(dados.data.name);
             setJobRole(dados.data.job_role);
             setBirthDate(dados.data.birthdate);
+            setNewBirthDay(moment(dados.data.birthdate).format('DD/MM/YYYY'));
             setAdmissionDate(dados.data.admission_date);
+            setNewAdmissionDate(moment(dados.data.admission_date).format('DD/MM/YYYY'));
             setProject(dados.data.project);
             setUrl(dados.data.url);
-            console.log('Data set');
         }
         
         // Executando dessa maneira por conta do typescript
@@ -53,8 +65,12 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
     function updateNaver() {
         api.put(`/navers/${props.match.params.id}`, {
             job_role: job_role,
-            admission_date: admission_date,
-            birthdate: birthdate,
+            admission_date: newAdmissionDate,
+            birthdate: newBirthDate,
+            // admission_date: admission_date,
+            // admission_date: moment.parseZone(newAdmissionDate, 'DD/MM/YYYY').local().format(),
+            // birthdate: birthdate,
+            // birthdate: moment.parseZone(newBirthDate, 'DD/MM/YYYY').local().format(),
             project: project,
             name: name,
             url: url
@@ -66,7 +82,6 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
           .catch(function (error) {
             console.log(error, error.response);
         });
-        console.log("funcionou");
     }
 
     function handleUpdate() {
@@ -108,13 +123,13 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
 
                         <div className="option-line">
                             <div className="input-block">
-                                <label htmlFor="idade">Idade</label>
-                                <input value={birthdate} onChange={e => setBirthDate(e.target.value)} placeholder="Idade" type="text" id="idade"/>
+                                <label htmlFor="idade">Data de nascimento</label>
+                                <input value={newBirthDate} onChange={e => setNewBirthDay(e.target.value)} placeholder="DD/MM/YYYY" type="text" id="idade"/>
                             </div>
                             
                             <div className="input-block">
-                                <label htmlFor="tempo-de-empresa">Tempo de empresa</label>
-                                <input value={admission_date} onChange={e => setAdmissionDate(e.target.value)} placeholder="Tempo de empresa" type="text" id="tempo-de-empresa"/>
+                                <label htmlFor="tempo-de-empresa">Data de entrada na empresa</label>
+                                <input value={newAdmissionDate} onChange={e => setNewAdmissionDate(e.target.value)} placeholder="DD/MM/YYYY" type="text" id="tempo-de-empresa"/>
                             </div>
                         </div>
 
@@ -141,7 +156,7 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
                         <Modal 
                             onClose={() => {
                                 setIsModalOpen(false);
-                                // handleInsert();
+                                props.history.push('/home');
                         }} title="Naver atualizado" body="Naver atualizado com sucesso!" /> 
                         : 
                         null

@@ -12,7 +12,10 @@ import naveLogo from '../../assets/images/icons/naveLogo.svg';
 function Header() {
     return(
         <header className="page-header">
-            <img src={naveLogo} alt="Nave"/>
+            <Link to="/home">
+                <img src={naveLogo} alt="Nave"/>
+            </Link>
+            
 
             <Link to="/">
                 Sair

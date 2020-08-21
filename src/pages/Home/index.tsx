@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 
 // Importando o Link para fazermos a navegação
 import { Link } from 'react-router-dom';
@@ -53,13 +55,14 @@ const Home = () => {
         api.get('/navers').then(response => {
             setNavers(response.data); // setando os navers
         })
-    }, [])
+    }, [isModalOpen])
 
     function deleteNaver(id: string) {
         api.delete(`/navers/${id}`)
             .then(function (response) {
                 console.log(response);
                 setIsConfirmModalOpen(false);
+                setIsNaverModalOpen(false);
                 setIsModalOpen(true);
                 // procurar e remover o 'i' de navers que possuir o id do removido,
                 // pois ele atualmente está sendo removido do banco mas não do array
@@ -70,13 +73,17 @@ const Home = () => {
     }
 
     function handleDeleteNaver(id: string) {
-        setIsConfirmModalOpen(true);
         setExcludingNaver(id);
+        setIsConfirmModalOpen(true);
     }
 
     function handleShowNaver(o: Naver) {
         setUpdatingNaver(o);
         setIsNaverModalOpen(true);
+
+        // const data = moment(o.birthdate).locale('pt-br');
+
+        // console.log(data.fromNow(true));
     }
 
     return(
@@ -155,19 +162,22 @@ const Home = () => {
                             setIsNaverModalOpen(false);
                         }} 
                         title={updatingNaver.name}
-                        birthdate={updatingNaver.birthdate} 
-                        admission_date={updatingNaver.admission_date}
+                        birthdate={moment(updatingNaver.birthdate).locale('pt-br').fromNow(true)} 
+                        admission_date={moment(updatingNaver.admission_date).locale('pt-br').fromNow(true)}
                         project={updatingNaver.project}
                         job_role={updatingNaver.job_role}
                         url={updatingNaver.url}
                     >
-                       
-
+                        <div className="modal-show-naver-options">
+                            <img onClick={e => handleDeleteNaver(updatingNaver.id)} src={trashCan} alt="Excluir"/>
+                            {<Link to={{
+                                pathname: `/att-naver/${updatingNaver.id}`,
+                            }}>
+                                <img src={pencil} alt="Editar"/>
+                            </Link>}
+                        </div>
                     </ModalShowNaver>
                 ) : null}
-                <button onClick={() => setIsNaverModalOpen(true)}>
-                    Abre Modal
-                </button>
             </div>
         </div>
     )

@@ -113,6 +113,10 @@
     justify-content: space-between;
 }
 
+#home-page .naver .naver-options img {
+    cursor: pointer;
+}
+
 #home-page .naver .naver-options a {
     text-decoration: none;
 }
@@ -173,4 +177,12 @@ a:-webkit-any-link {
 
 #home-page .confirm-exclusion-buttons button:hover {
     opacity: 70%;
+}
+
+#modal-show-naver div.modal-show-naver-options img {
+    cursor: pointer;
+}
+
+#modal-show-naver div.modal-show-naver-options a {
+    margin-left: 1.6rem;
 }
