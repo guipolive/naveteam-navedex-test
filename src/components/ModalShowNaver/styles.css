@@ -36,6 +36,7 @@
 #modal-show-naver .container img.naver-image {
     height: 100%;
     width: 50%;
+    object-fit: cover;
 
     max-height: 62rem;
     max-width: 62rem;
@@ -53,7 +54,7 @@
 }
 
 #modal-show-naver .modal-header {
-    margin-left: 28rem;
+    /* margin-left: 28rem; */
 }
 
 #modal-show-naver .modal-header img {

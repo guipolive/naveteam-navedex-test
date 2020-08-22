@@ -51,12 +51,11 @@
 }
 
 #add-naver-page .option-naver-container div.form {
-    height: 90%;
+    /* height: 90%; */
+    height: auto;
     width: 100%;
 
     margin-top: 4rem;
-
-    
 
     display: flex;
     flex-direction: column;
@@ -68,8 +67,11 @@
     height: 8rem;
     width: 100%;
 
+    height: auto;
+
     margin: 1.5rem 0;
 
+    flex-flow: row wrap;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,17 +102,18 @@
     color: #9E9E9E;
 }
 
-#add-naver-page .option-naver-container button {
+#add-naver-page .option-naver-container div.form button {
     width: 17rem;
     height: 4rem;
+    
+    margin-left: auto;
 
-    float: right;
-    /* margin: 3.3rem 0; */
+    margin-top: 3.5rem;
     border: 0;
     background: #212121;
 }
 
-#add-naver-page .option-naver-container button a {
+#add-naver-page .option-naver-container div.form button a {
     font: 600 Montserrat;
     color: #FFFFFF;
 

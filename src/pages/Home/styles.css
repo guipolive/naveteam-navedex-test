@@ -1,6 +1,6 @@
 #home-page {
     /* Altura e largura completando a tela inteira */
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
 
     /* Alinhando o conteúdo ao centro */
@@ -53,7 +53,7 @@
 /* Lista de navers */
 #home-page .navers-list {
     height: 37.5rem;
-    width: 100%;
+    /* width: 100%; */
 
     max-width: 140rem;
     /* padding: 0 3.2rem; */
@@ -79,9 +79,9 @@
     width: 28rem;
     height: 28rem;
     cursor: pointer;
+    object-fit: cover;
 
     /* border-radius: 10px; */
-    background-size: contain;
 
     transition: 0.2s;
 }
