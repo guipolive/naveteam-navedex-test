@@ -5,7 +5,7 @@ require('dotenv').config();
 
 
 const api = axios.create({
-    baseURL: 'https://navedex-api.herokuapp.com/v1',
+    baseURL: process.env.REACT_APP_API_URL,
         headers: {
             'Content-Type': 'application/json'
         }
@@ -17,7 +17,7 @@ const api = axios.create({
         api.defaults.headers = {
             Authorization: `Bearer ${token}`
         }
-        console.log('Access Token modificado com sucesso' + token);
+        console.log('Access Token modificado com sucesso.');
     }
 
 
