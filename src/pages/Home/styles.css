@@ -55,13 +55,15 @@
     height: 37.5rem;
     width: 100%;
 
-    padding: 0 3.2rem;
+    max-width: 140rem;
+    /* padding: 0 3.2rem; */
 
     margin-top: 1rem;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
+    justify-content: center;
     flex-flow: row wrap;
 }
 
@@ -69,8 +71,8 @@
 #home-page .naver {
     height: 100%;
     width: 28rem;
-
-    margin-top: 3rem;
+    
+    margin: 3rem 2.4rem;
 }
 
 #home-page .naver > img {
@@ -85,7 +87,8 @@
 }
 
 #home-page .naver > img:hover {
-    box-shadow: -10px -10px #505050;
+    /* box-shadow: -10px -10px #505050; */
+    opacity: 70%;
 }
 
 #home-page .naver p.naver-name {
