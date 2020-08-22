@@ -13,7 +13,9 @@
 }
 
 html, body, #root {
-    height: 100vh; /* faz com que ocupe 100% da tela */
+    /* height: 100vh; faz com que ocupe 100% da tela */
+    height: 100%;
+    margin: 0;
 }
 
 body {
