@@ -24,7 +24,7 @@ interface ModalProps {
 const ModalShowNaver: React.FC<ModalProps>= (props)=> {
 
     const handleOutsideClick = (e: any) => {
-        if(e.target.id == 'modal')
+        if(e.target.id == 'modal-show-naver')
             props.onClose();
     }
 
