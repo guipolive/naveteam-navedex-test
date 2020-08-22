@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import 'moment/locale/pt-br';
@@ -50,7 +51,7 @@ const Home = () => {
 
     const [navers, setNavers] = useState<Naver[]>([]); // declarando o estado navers
 
-    // é uma função que pode ser executada várias vezes se necessário
+    // Vai executar sempre que 'isModalOpen' for alterado
     useEffect(() => {
         api.get('/navers').then(response => {
             setNavers(response.data); // setando os navers
