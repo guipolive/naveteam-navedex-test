@@ -37,12 +37,6 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
     const [project, setProject] = useState('');
     const [url, setUrl] = useState('');
 
-    // console.log(moment('2020-08-05T00:00:00.000Z', ''));
-    // const test = moment('23/08/2013', 'dd/mm/yyyy').utc();
-    // const test = moment.parseZone('26/11/2015', 'dd/mm/yyyy').local().format();
-    // console.log(test);
-    console.log(moment.parseZone('27/11/2015', 'DD/MM/YYYY').local().format()); 
-
     useEffect(() => {
         // Create an scoped async function in the hook
         async function buscaNaver() {
@@ -67,10 +61,6 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
             job_role: job_role,
             admission_date: newAdmissionDate,
             birthdate: newBirthDate,
-            // admission_date: admission_date,
-            // admission_date: moment.parseZone(newAdmissionDate, 'DD/MM/YYYY').local().format(),
-            // birthdate: birthdate,
-            // birthdate: moment.parseZone(newBirthDate, 'DD/MM/YYYY').local().format(),
             project: project,
             name: name,
             url: url
@@ -86,13 +76,6 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
 
     function handleUpdate() {
         setIsModalOpen(true);
-
-        // setName('');
-        // setJobRole('');
-        // setBirthDate('');
-        // setAdmissionDate('');
-        // setProject('');
-        // setUrl('');
     }
 
     return(
