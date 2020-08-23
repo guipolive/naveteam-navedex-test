@@ -44,3 +44,9 @@ body, input, button, select, textarea {
         font-size: 62.5% /* aumentando um pouco a letra para telas grandes */;
     }
 }
+
+@media(max-width: 500px) {
+    :root {
+        margin-top: 2rem;
+    }
+}
