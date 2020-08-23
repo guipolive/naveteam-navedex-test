@@ -71,9 +71,6 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
                         url: response.data.url
                     })
                 })
-                .then(() => {
-                    console.log(naver);
-                })
                 .catch(function (error) {
                     console.log(error, error.response);
                 }

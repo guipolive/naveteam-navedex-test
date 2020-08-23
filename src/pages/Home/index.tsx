@@ -62,7 +62,6 @@ const Home = () => {
     function deleteNaver(id: string) {
         api.delete(`/navers/${id}`)
             .then(function (response) {
-                console.log(response);
                 setIsConfirmModalOpen(false);
                 setIsNaverModalOpen(false);
                 setIsModalOpen(true);

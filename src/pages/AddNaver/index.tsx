@@ -49,12 +49,11 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
             project: e.project,
             name: e.name,
             url: e.url
-          })
-          .then(function (response) {
-            console.log(response);
+        })
+        .then(function (response) {
             setIsModalOpen(true); 
-          })
-          .catch(function (error) {
+        })
+        .catch(function (error) {
             console.log(error, error.response);
         });
     }

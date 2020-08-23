@@ -27,7 +27,6 @@ function Login() {
             email: email,
             password: password
         }).then(response => {
-            console.log(response);
             setAccessToken(response.data.token);
             setAuthenticated(true);
         }).catch(error => {

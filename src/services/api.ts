@@ -17,7 +17,6 @@ const api = axios.create({
         api.defaults.headers = {
             Authorization: `Bearer ${token}`
         }
-        console.log('Access Token modificado com sucesso.');
     }
 
 
