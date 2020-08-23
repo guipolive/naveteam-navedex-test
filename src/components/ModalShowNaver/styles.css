@@ -107,8 +107,6 @@
 
     #modal-show-naver .container {    
         height: 90vh;
-
-        border: 1px solid red;
         
         display: block;
         align-items: flex-start;

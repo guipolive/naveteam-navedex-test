@@ -34,12 +34,7 @@ interface MatchParams {
     id: string;
 }
 
-
-interface AttNaverProps extends RouteComponentProps<MatchParams> {
-    teste: string;
-}
-
-const AttNaver: React.FC<AttNaverProps>= (props) => {
+const AttNaver: React.FC<MatchParams>= (props) => {
     
     const [naver, setNaver] = useState<Naver>({
         id: '',
