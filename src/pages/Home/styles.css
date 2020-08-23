@@ -58,10 +58,8 @@
 /* Lista de navers */
 #home-page .navers-list {
     height: 37.5rem;
-    /* width: 100%; */
 
     max-width: 140rem;
-    /* padding: 0 3.2rem; */
 
     margin-top: 1rem;
 
@@ -86,13 +84,10 @@
     cursor: pointer;
     object-fit: cover;
 
-    /* border-radius: 10px; */
-
     transition: 0.2s;
 }
 
 #home-page .naver > img:hover {
-    /* box-shadow: -10px -10px #505050; */
     opacity: 70%;
 }
 
@@ -149,7 +144,13 @@ a:-webkit-any-link {
 }
 
 #home-page .confirm-exclusion-buttons {
+    width: 70%;
+    
     float: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     margin-top: 5rem;
 }
@@ -159,8 +160,6 @@ a:-webkit-any-link {
     height: 4rem;
 
     border: 0;
-
-    /* background: #212121; */
 
     font: 600 Montserrat;
     color: #FFFFFF;
@@ -176,16 +175,9 @@ a:-webkit-any-link {
     color: #212121;
 
     border: 1px solid #212121;
-
-    cursor: pointer;
-    transition: 0.3s;
 }
 
 #home-page .confirm-exclusion-buttons button.button-confirm {
-    width: 17.5rem;
-    height: 4rem;
-
-    border: 0;
 
     background: #212121;
 
@@ -193,9 +185,6 @@ a:-webkit-any-link {
     color: #FFFFFF;
 
     margin-left: 2.4rem;
-
-    cursor: pointer;
-    transition: 0.3s;
 }
 
 #home-page .confirm-exclusion-buttons button:hover {
@@ -208,4 +197,40 @@ a:-webkit-any-link {
 
 #modal-show-naver div.modal-show-naver-options a {
     margin-left: 1.6rem;
+}
+
+@media(max-width: 1045px) {
+
+    #home-page .confirm-exclusion-buttons {
+        width: 100%;
+        height: auto;        
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home-page .confirm-exclusion-buttons button {
+        width: 70%;
+    }
+
+    #home-page .confirm-exclusion-buttons button.button-confirm {
+        margin-left: 0rem;
+        margin-top: 1rem;
+    }
+}
+
+@media(max-width: 450px) {
+    #home-page .mini-header p {
+        font-size: 2rem;    
+    }
+    
+    #home-page .mini-header button {
+        
+        width: 40%;
+        height: 4rem;
+
+        font-size: 70%;
+    }
 }

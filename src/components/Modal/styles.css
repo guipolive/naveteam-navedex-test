@@ -24,6 +24,7 @@
     padding: 3.2rem;
 
     width: 40vw;
+
     /* height: 20vh; */
     height: auto;
 }
@@ -58,4 +59,10 @@
     margin-top: 3.4rem;
     font-weight: 500;
     color: #212121;
+}
+
+@media(max-width: 1045px) {
+    #modal .container {
+        width: 70vw;
+    }
 }

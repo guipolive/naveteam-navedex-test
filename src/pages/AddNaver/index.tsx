@@ -9,10 +9,10 @@ import Modal from '../../components/Modal';
 import HandleNaver from '../../components/HandleNaver';
 
 // Importando o logo da Nave e os ícones
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Redirect, RouteComponentProps } from 'react-router-dom';
 
 // Importando a api
-import api from '../../services/api';
+import api, { isUserAuthorized } from '../../services/api';
 
 interface Naver {
     id: string;
@@ -79,6 +79,10 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
                 : 
                 null
             }
+
+{isUserAuthorized() ? 
+    null
+: <Redirect to="/" />}
         </div>
     )
 }
