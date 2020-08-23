@@ -4,9 +4,6 @@ import Cookies from 'universal-cookie';
 // Importando o dotenv que nos ajuda a tratar as variáveis de ambiente
 require('dotenv').config();
 
-
- 
-
 const cookies = new Cookies();
 
 const api = axios.create({
@@ -16,8 +13,6 @@ const api = axios.create({
             'Authorization': `Bearer ${cookies.get('token')}`
         }
     }); // aqui fica a conexão com o backend, e deve ficar o link para ele
-    
-    
     
     export function setAccessToken(token: string) {
         cookies.set('token', token);
@@ -33,6 +28,5 @@ const api = axios.create({
         }
         else return false;
     }
-
 
 export default api; // usaremos 'api' sempre que formos fazer conexão com a api
