@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'universal-cookie';
 
 // Importando o Link para fazermos a navegação
 import { Link } from 'react-router-dom';
@@ -10,6 +11,12 @@ import './styles.css';
 import naveLogo from '../../assets/images/icons/naveLogo.svg';
 
 function Header() {
+
+    const cookies = new Cookies();
+
+    function handleExit() {
+        cookies.set('token', '');
+    }
     return(
         <header className="page-header">
             <Link to="/home">
@@ -17,7 +24,7 @@ function Header() {
             </Link>
             
 
-            <Link to="/">
+            <Link onClick={() => handleExit()} to="/">
                 Sair
             </Link>
         </header>

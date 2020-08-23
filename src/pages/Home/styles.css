@@ -33,6 +33,10 @@
 }
 
 #home-page .mini-header button {
+    font: Montserrat;
+    font-weight: 600;
+    color: #FFFFFF;
+
     width: 17.6rem;
     height: 4rem;
 
@@ -40,14 +44,15 @@
 
     border: 0;
 
+    cursor: pointer;
+
     background: #212121;
+
+    transition: 0.2s;
 }
 
-#home-page .mini-header button a {
-    font: 600 Montserrat;
-    color: #FFFFFF;
-
-    text-decoration: none; /* Removendo o sublinhado */
+#home-page .mini-header button:hover {
+    opacity: 70%;
 }
 
 /* Lista de navers */

@@ -3,7 +3,7 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 
 // Importando o Link para fazermos a navegação
-import { Link } from 'react-router-dom';
+import { Link, Redirect, RouteComponentProps } from 'react-router-dom';
 
 // Importando components
 import Header from '../../components/Header';
@@ -18,7 +18,7 @@ import trashCan from '../../assets/images/icons/trashCan.svg';
 import pencil from '../../assets/images/icons/pencil.svg';
 
 // Importando nossa api
-import api from '../../services/api';
+import api, { isUserAuthorized } from '../../services/api';
 
 interface Naver {
     id: string;
@@ -31,7 +31,7 @@ interface Naver {
     url: string;
 }
 
-const Home = () => {
+const Home: React.FC<RouteComponentProps> = (props) => {
 
     const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
     const [isNaverModalOpen, setIsNaverModalOpen] = useState(false);
@@ -88,10 +88,8 @@ const Home = () => {
             <div className="mini-header">
                     <p>Navers</p>
 
-                    <button>
-                        <Link to="/add-naver">
-                            Adicionar Naver
-                        </Link>
+                    <button onClick={() => props.history.push('add-naver')}>
+                        Adicionar naver
                     </button>
             </div>
 
@@ -172,6 +170,10 @@ const Home = () => {
                     </ModalShowNaver>
                 ) : null}
             </div>
+
+            {isUserAuthorized() ? 
+                null
+            : <Redirect to="/" />}
         </div>
     )
 }
