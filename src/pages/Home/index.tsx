@@ -38,7 +38,8 @@ const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [excludingNaver, setExcludingNaver] = useState('');
 
-    const [updatingNaver, setUpdatingNaver] = useState<Naver>({id: '',
+    const [updatingNaver, setUpdatingNaver] = useState<Naver>({
+            id: '',
             name: '',
             admission_date: '',
             job_role: '',
@@ -52,7 +53,8 @@ const Home = () => {
 
     // Vai executar sempre que 'isModalOpen' for alterado
     useEffect(() => {
-        api.get('/navers').then(response => {
+        api.get('/navers')
+        .then(response => {
             setNavers(response.data); // setando os navers
         })
     }, [isModalOpen])
@@ -104,9 +106,7 @@ const Home = () => {
 
                         <div className="naver-options">
                             <img onClick={e => handleDeleteNaver(naver.id)} src={trashCan} alt="Excluir"/>
-                            <Link to={{
-                                pathname: `/att-naver/${naver.id}`,
-                            }}>
+                            <Link to={`/att-naver/${naver.id}`}>
                                 <img src={pencil} alt="Editar"/>
                             </Link>
                         </div>

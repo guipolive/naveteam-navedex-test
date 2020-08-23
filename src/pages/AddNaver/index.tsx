@@ -27,7 +27,7 @@ interface Naver {
 
 const AddNaver: React.FC<RouteComponentProps> = (props) => {
 
-    const bob = {
+    const theNaver = {
         id: '',
         name: '',
         admission_date: '',
@@ -65,7 +65,7 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
 
             <main>
                 <HandleNaver 
-                    naver={bob}
+                    naver={theNaver}
                     title='Adicionar naver'
                     sendNaver={e => createNaver(e)}
                 />

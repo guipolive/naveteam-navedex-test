@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Importando o css
 import './styles.css';
 
 // Importando o logo da Nave e os ícones
 import arrowLeft from '../../assets/images/icons/arrowLeft.svg';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface Naver {
     id: string;
@@ -35,6 +35,15 @@ const HandleNaver: React.FC<HandleNaverProps> = (props) => {
     const [project, setProject] = useState(props.naver.project);
     const [url, setUrl] = useState(props.naver.url);
 
+    useEffect(() => {
+        setName(props.naver.name)
+        setJobRole(props.naver.job_role)
+        setBirthDate(props.naver.birthdate)
+        setAdmissionDate(props.naver.admission_date)
+        setProject(props.naver.project)
+        setUrl(props.naver.url)
+    }, [props.naver])
+
     function handleClick() {
             props.naver.admission_date = admission_date;
             props.naver.name = name;
@@ -43,7 +52,7 @@ const HandleNaver: React.FC<HandleNaverProps> = (props) => {
             props.naver.project = project;
             props.naver.url = url;
 
-            // console.log(props.naver);
+            
             props.sendNaver(props.naver);
     }
 
