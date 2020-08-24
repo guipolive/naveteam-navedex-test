@@ -14,6 +14,8 @@
 - login e senha para testes:
     - testing-user-new@nave.rs
     - 1234nave5
+  
+>Obs.: Por algum motivo o css está tendo alguns comportamentos diferentes na aplicação hospedada no Heroku. Como exemplo: os ícones e imagens com hover somem ao passar o mouse em cima no heroku.
 ## Sobre o desafio
 
 O sistema consiste em uma web app para visualização e criação dos navers, possuindo informações como nome, idade, cargo, tempo de empresa e projetos que participou.
