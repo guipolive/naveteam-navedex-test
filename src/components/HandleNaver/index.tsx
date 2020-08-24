@@ -7,6 +7,8 @@ import './styles.css';
 import arrowLeft from '../../assets/images/icons/arrowLeft.svg';
 import { Link } from 'react-router-dom';
 
+import moment from 'moment';
+
 interface Naver {
     id: string;
     name: string;
@@ -46,13 +48,12 @@ const HandleNaver: React.FC<HandleNaverProps> = (props) => {
 
     function handleClick() {
             props.naver.admission_date = admission_date;
+            props.naver.birthdate = birthdate;
             props.naver.name = name;
             props.naver.job_role = job_role;
-            props.naver.birthdate = birthdate;
             props.naver.project = project;
             props.naver.url = url;
-
-            
+ 
             props.sendNaver(props.naver);
     }
 
@@ -96,24 +97,24 @@ const HandleNaver: React.FC<HandleNaverProps> = (props) => {
                             <div className="input-block">
                                 <label htmlFor="idade">Data de nascimento</label>
                                 <input 
-                                    value={birthdate}
-                                    onChange={e => setBirthDate(e.target.value)}
-                                    type="text"
+                                    type="date"
+                                    value={moment(birthdate, "DD/MM/YYYY").format('YYYY-MM-DD')}
+                                    onChange={e => setBirthDate(moment(e.target.value, 'YYYY-MM-DD').format('DD/MM/YYYY'))}
                                     id="idade"
                                     placeholder="DD/MM/AAAA"
-                                    maxLength={11}
+                                    maxLength={10}
                                 />
                             </div>
                             
                             <div className="input-block">
                                 <label htmlFor="tempo-de-empresa">Data de admissão</label>
                                 <input 
-                                    value={admission_date}
-                                    onChange={e => setAdmissionDate(e.target.value)}
-                                    type="text"
+                                    type="date"
+                                    value={moment(admission_date, "DD/MM/YYYY").format('YYYY-MM-DD')}
+                                    onChange={e => setAdmissionDate(moment(e.target.value, 'YYYY-MM-DD').format('DD/MM/YYYY'))}
                                     id="tempo-de-empresa"
                                     placeholder="DD/MM/AAAA"
-                                    maxLength={11}
+                                    maxLength={10}
                                 />
                             </div>
                         </div>
