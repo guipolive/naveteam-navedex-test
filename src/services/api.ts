@@ -19,7 +19,6 @@ const api = axios.create({
         api.defaults.headers = {
             Authorization: `Bearer ${cookies.get('token')}`
         }
-        console.log('Access Token modificado com sucesso.');
     }
 
     export function isUserAuthorized() {
