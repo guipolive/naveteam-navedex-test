@@ -1,15 +1,19 @@
 # Desafio de frontend da [Nave](https://nave.rs/)
 
 ## Rodando a aplicação
-    yarn||npm install
+    $ yarn install
     
-    yarn start
+    $ yarn start 
 
   Acessar [http://localhost:3000](http://localhost:3000)
 
   OU
 
-  Testar a [aplicação](https://navedex-guipolive.herokuapp.com/) hospedada no Heroku.
+  Testar a [aplicação](https://navedex-guipolive.herokuapp.com/) hospedada no Heroku
+
+- login e senha para testes:
+    - testing-user-new@nave.rs
+    - 1234nave5
 ## Sobre o desafio
 
 O sistema consiste em uma web app para visualização e criação dos navers, possuindo informações como nome, idade, cargo, tempo de empresa e projetos que participou.
@@ -38,7 +42,7 @@ Alguns elementos foram convertidos em ```componentes react``` para reutilizaçã
 
 ## Dificuldades
   - Foi gasto algum tempo no desenvolvimento para descobrir o que de fato era esperado pela `API` no campo `birthday` e `admission_date`, porque este campo era recebido em um formato pela `API`, mas era enviado em outro formato nas requisições.
-    - No fim das contas, eu envio uma data no formato ```DD/MM/AAAA``` e converto o tempo decorrido para melhor exibição da ```idade``` e ```tempo de empresa```.
+    - No fim das contas, eu envio uma data no formato ```DD/MM/YYYY``` e converto o tempo decorrido para melhor exibição da ```idade``` e ```tempo de empresa```.
 
 ## Funcionalidades extras
 - Tema escuro!
