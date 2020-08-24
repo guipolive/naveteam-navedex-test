@@ -17,12 +17,9 @@ function Header() {
     function handleExit() {
         cookies.set('token', '');
     }
-
-    const [theme, setTheme] = useState(0);
+    const [theme, setTheme] = useState(parseInt(window.localStorage.getItem('theme') || '0'));
 
     useEffect(() => {
-        console.log('Tema alterado');
-
         if(theme % 2 > 0){
             document.documentElement.style.setProperty("--color-background", '#FFFF');    
             document.documentElement.style.setProperty("--color-main-text", "#212121");
@@ -33,6 +30,8 @@ function Header() {
             document.documentElement.style.setProperty("--color-main-text", "#FFFF");
             document.documentElement.style.setProperty("--filter-option", "10");
         }
+
+        window.localStorage.setItem('theme', theme.toString());
             
 
     }, [theme]);

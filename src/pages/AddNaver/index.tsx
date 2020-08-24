@@ -39,6 +39,7 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
     }
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
     // Esta função vai ser executada quando o botão "ADD NAVER" for clicado
     function createNaver(e: Naver) {
@@ -55,6 +56,7 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
         })
         .catch(function (error) {
             console.log(error, error.response);
+            setIsErrorModalOpen(true);
         });
     }
 
@@ -75,7 +77,18 @@ const AddNaver: React.FC<RouteComponentProps> = (props) => {
                     onClose={() => {
                         setIsModalOpen(false);
                         props.history.push('/home');
-                }} title="Naver criado" body="Naver criado com sucesso!" /> 
+                    }} title="Naver criado" body="Naver criado com sucesso!"
+                /> 
+                : 
+                null
+            }
+
+            {isErrorModalOpen ? 
+                <Modal 
+                    onClose={() => {
+                        setIsErrorModalOpen(false);
+                    }} title="Erro" body="Verifique os dados e tente novamente" 
+                /> 
                 : 
                 null
             }

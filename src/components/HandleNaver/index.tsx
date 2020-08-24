@@ -142,7 +142,7 @@ const HandleNaver: React.FC<HandleNaverProps> = (props) => {
                             </div>
 
                             <button 
-                                onClick={e => handleClick()/* props.sendNaver(props.naver) */}
+                                onClick={e => handleClick()}
                             >
                                 <Link to="#">
                                     Salvar

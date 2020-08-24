@@ -51,6 +51,7 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
     });
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
     useEffect(() => {
         // Async function dentro do hoook
@@ -91,12 +92,13 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
             project: e.project,
             name: e.name,
             url: e.url
-          })
-          .then(function (response) {
+        })
+        .then(function (response) {
             setIsModalOpen(true);
-          })
-          .catch(function (error) {
+        })
+        .catch(function (error) {
             console.log(error, error.response);
+            setIsErrorModalOpen(true);
         });
     }
 
@@ -118,6 +120,16 @@ const AttNaver: React.FC<AttNaverProps>= (props) => {
                         setIsModalOpen(false);
                         props.history.push('/home');
                 }} title="Naver atualizado" body="Naver atualizado com sucesso!" /> 
+                : 
+                null
+            }
+
+            {isErrorModalOpen ? 
+                <Modal 
+                    onClose={() => {
+                        setIsErrorModalOpen(false);
+                    }} title="Erro" body="Verifique os dados e tente novamente" 
+                /> 
                 : 
                 null
             }

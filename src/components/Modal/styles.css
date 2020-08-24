@@ -59,7 +59,7 @@
 #modal .modal-content p {
     margin-top: 3.4rem;
     font-weight: 500;
-    color: var(--color-main-text);
+    color: #212121;
 }
 
 @media(max-width: 1045px) {

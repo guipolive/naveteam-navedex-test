@@ -39,3 +39,8 @@ Alguns elementos foram convertidos em ```componentes react``` para reutilizaçã
 ## Dificuldades
   - Foi gasto algum tempo no desenvolvimento para descobrir o que de fato era esperado pela `API` no campo `birthday` e `admission_date`, porque este campo era recebido em um formato pela `API`, mas era enviado em outro formato nas requisições.
     - No fim das contas, eu envio uma data no formato ```DD/MM/AAAA``` e converto o tempo decorrido para melhor exibição da ```idade``` e ```tempo de empresa```.
+
+## Funcionalidades extras
+- Tema escuro!
+
+![alt text](./public/gif.gif)
