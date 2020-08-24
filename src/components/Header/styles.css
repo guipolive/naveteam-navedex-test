@@ -14,11 +14,17 @@ header.page-header img {
     height: 3.5rem;
     width: 13.6rem;
 
+    filter: brightness(var(--filter-option));
+    cursor: pointer;
+}
+
+header.page-header p {
+    color: var(--color-main-text);
     cursor: pointer;
 }
 
 header.page-header a {
     text-decoration: none; /* Removendo características de link */
-    color: #000000;
+    color: var(--color-main-text);
     font: 600 Montserrat 1.4rem;
 }

@@ -1,8 +1,9 @@
 :root {
     font-size: 60%;
 
-    /* --color-background: #F0F0F7; */
-    --color-background: white;
+    --color-background: #F0F0F7;
+    --color-main-text: #212121;
+    --filter-option: 0;
 }
 
 /* para todos os elementos */

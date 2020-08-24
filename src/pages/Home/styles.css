@@ -28,14 +28,14 @@
     font-style: normal;
     font-weight: 600;
     font-size: 4rem;
-    color: #212121;
+    color: var(--color-main-text);
 
 }
 
 #home-page .mini-header button {
     font: Montserrat;
     font-weight: 600;
-    color: #FFFFFF;
+    color: var(--color-background);
 
     width: 17.6rem;
     height: 4rem;
@@ -46,7 +46,7 @@
 
     cursor: pointer;
 
-    background: #212121;
+    background: var(--color-main-text);
 
     transition: 0.2s;
 }
@@ -98,7 +98,7 @@
     font-size: 1.6rem;
     line-height: 1.8rem;
 
-    color: #212121;
+    color: var(--color-main-text);
 
     margin-top: 1.6rem;
 }
@@ -108,7 +108,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 2.4rem;
-    color: #212121;
+    color: var(--color-main-text);
 
     margin-top: 0.4rem;
 
@@ -118,6 +118,8 @@
     width: 5.4rem;
 
     margin-top: 0.7rem;
+
+    filter: brightness(var(--filter-option));
 
     /* Jogando um item para cada lado */
     display: flex;

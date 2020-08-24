@@ -37,6 +37,7 @@
 
 #modal .modal-header p {
     font: 600 Montserrat;
+    color: #212121;
     font-size: 2.4rem;
 }
 
@@ -58,7 +59,7 @@
 #modal .modal-content p {
     margin-top: 3.4rem;
     font-weight: 500;
-    color: #212121;
+    color: var(--color-main-text);
 }
 
 @media(max-width: 1045px) {

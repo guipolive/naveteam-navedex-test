@@ -12,9 +12,7 @@
 
 .option-naver-container div.option-header a {
     width: 34rem;
-
     
-
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -29,7 +27,7 @@
 .option-naver-container div.option-header p {
     font: 600 Montserrat;
     font-size: 3.6rem;
-    color: #212121;
+    color: var(--color-main-text);
 
     margin-left: 2rem;
 }
@@ -66,6 +64,7 @@
 
 .option-naver-container div.form .option-line .input-block label {
     display: block;
+    color: var(--color-main-text);
 }
 
 
@@ -93,12 +92,14 @@
 
     margin-top: 3.5rem;
     border: 0;
-    background: #212121;
+
+    background: var(--color-main-text);
 }
 
 .option-naver-container div.form button a {
     font: 600 Montserrat;
-    color: #FFFFFF;
+
+    color: var(--color-background);
 
     text-decoration: none; /* Removendo o sublinhado */
 }
