@@ -42,5 +42,8 @@ Alguns elementos foram convertidos em ```componentes react``` para reutilizaçã
 
 ## Funcionalidades extras
 - Tema escuro!
+- Redirecionamento automático para ```/``` caso o usuário não esteja logado e tente acessar alguma rota que exija login.
+- Sessão guardada nos cookies do navegador.
+- Tema escuro guardado no ```localStorage``` do navegador
 
-![alt text](./public/gif.gif)
+![Gif de funcionalidades](./public/gif.gif)
