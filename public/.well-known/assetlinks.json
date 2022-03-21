@@ -1,18 +1,22 @@
 [
-    {
-        "relation": ["delegate_permission/common.handle_all_urls"],
-        "target": {
-            "namespace": "android_app",
-            "package_name": "com.hygea.plantaomais.development",
-            "sha256_cert_fingerprints": ["43:9B:DF:71:D2:51:BD:2D:BD:F6:EA:00:D1:CA:48:BD:CF:7B:C4:5B:57:12:F7:F9:3F:44:98:25:27:53:37:AF"]
-        }
-    },
-    {
-        "relation": ["delegate_permission/common.handle_all_urls"],
-        "target": {
-            "namespace": "android_app",
-            "package_name": "com.hygea.plantaomais",
-            "sha256_cert_fingerprints": ["43:9B:DF:71:D2:51:BD:2D:BD:F6:EA:00:D1:CA:48:BD:CF:7B:C4:5B:57:12:F7:F9:3F:44:98:25:27:53:37:AF"]
-        }
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hygea.plantaomais.development",
+      "sha256_cert_fingerprints": [
+        "1C:36:23:35:2C:BD:8C:70:3E:CF:8D:15:9A:D2:B6:96:D8:B2:15:24:B8:B1:04:56:00:54:92:7D:B3:8F:F9:5E"
+      ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hygea.plantaomais",
+      "sha256_cert_fingerprints": [
+        "1C:36:23:35:2C:BD:8C:70:3E:CF:8D:15:9A:D2:B6:96:D8:B2:15:24:B8:B1:04:56:00:54:92:7D:B3:8F:F9:5E"
+      ]
+    }
+  }
 ]
